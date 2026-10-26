@@ -1,0 +1,10 @@
+.env*
+!.env.example
+output/
+tmp/
+*.tsbuildinfo
+.git/
+.agents/
+.codex/
+.aws/
+node_modules/

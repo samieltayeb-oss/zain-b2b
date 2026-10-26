@@ -1,0 +1,10 @@
+{
+  "asset": "grafana-play-banking.png",
+  "source": "https://play.grafana.org/d/appenv-banking-product-overview/banking-product-overview",
+  "referenceCatalogue": "https://grafana.com/grafana/dashboards/",
+  "captureDate": "2026-10-21",
+  "method": "Direct browser screenshot of actual running Grafana Play, 1440 × 900 viewport. No generated imagery, reconstructed UI, recoloring or compositing.",
+  "data": "Public Grafana Play demonstration environment. Not ONB infrastructure or customer data.",
+  "rights": "Grafana interface and marks belong to Grafana Labs. Local visual review only; no commercial marketing license has been verified. Written permission must be confirmed before external commercial publication.",
+  "policy": "https://grafana.com/trademark-policy/"
+}

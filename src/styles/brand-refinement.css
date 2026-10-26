@@ -1,0 +1,242 @@
+/* Complete official bilingual vector lockup. Never colour-filter or crop. */
+.sidebar {
+  overflow-y: auto;
+}
+.sidebar > * {
+  flex-shrink: 0;
+}
+.customer-identity-region {
+  margin: 0 9px 27px;
+  padding: 24px 0 25px;
+  background: transparent;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0;
+  border: 0;
+  border-top: 1px solid #ffffff14;
+  border-bottom: 1px solid #ffffff14;
+  border-radius: 0;
+}
+.customer-identity-region > img {
+  width: 176px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  margin-bottom: 20px;
+  background: transparent;
+}
+.customer-identity-region > strong {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: #e3d7e9;
+  max-width: 180px;
+}
+.customer-identity-region > span {
+  font-size: 10px;
+  color: #a78eb4;
+  margin-top: 5px;
+}
+.joint-identity {
+  gap: 23px;
+  min-height: 60px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.joint-zain {
+  padding: 8px 16px;
+  background: #411650;
+  border-radius: 8px;
+}
+.joint-zain img {
+  width: 98px;
+  height: 43px;
+}
+.joint-identity .joint-onb {
+  width: 192px;
+  height: auto;
+  max-height: none;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  object-fit: contain;
+}
+.joint-separator {
+  font-size: 19px;
+  color: #b69fc0;
+}
+.submission-success .joint-identity {
+  margin-bottom: 8px;
+}
+@media (max-width: 1250px) {
+  .customer-identity-region {
+    margin-inline: -14px;
+    padding-inline: 25px;
+  }
+  .customer-identity-region > img {
+    width: 146px;
+  }
+  .joint-identity .joint-onb {
+    width: 154px;
+  }
+}
+@media (max-width: 1000px) {
+  .customer-identity-region {
+    margin-inline: -12px;
+    padding-inline: 23px;
+  }
+  .customer-identity-region > img {
+    width: 138px;
+  }
+  .customer-identity-region > strong {
+    font-size: 12px;
+  }
+  .joint-identity {
+    gap: 20px;
+  }
+  .joint-zain img {
+    width: 85px;
+    height: 37px;
+  }
+}
+@media (max-width: 720px) {
+  .sidebar .customer-identity-region {
+    margin-inline: -12px;
+    padding-inline: 28px;
+  }
+  .sidebar .customer-identity-region > img {
+    width: 150px;
+  }
+  .joint-identity {
+    gap: 18px;
+    min-height: 100px;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+  }
+  .joint-zain {
+    padding: 7px 12px;
+  }
+  .joint-zain img {
+    width: 77px;
+    height: 34px;
+  }
+  .joint-identity .joint-onb {
+    width: 144px;
+    height: auto;
+  }
+  .joint-separator {
+    font-size: 17px;
+  }
+  .submission-success .joint-identity {
+    gap: 12px;
+  }
+  .submission-success .joint-zain img {
+    width: 65px;
+    height: 29px;
+  }
+  .submission-success .joint-onb {
+    width: 130px;
+  }
+}
+.overview-page .page-heading {
+  margin-bottom: 22px;
+  align-items: flex-start;
+}
+.overview-page .page-heading h1 {
+  margin-top: 0;
+}
+.overview-page .page-heading p {
+  margin-top: 8px;
+  max-width: 850px;
+}
+.optional-observability {
+  margin: 26px 0;
+  scroll-margin-top: 20px;
+  border: 1px solid #e4d6eb;
+  border-radius: 11px;
+  background: #faf6fc;
+}
+.optional-observability > summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 22px 25px;
+  cursor: pointer;
+  color: #704080;
+}
+.optional-observability > summary strong {
+  display: block;
+  font-size: 15px;
+}
+.optional-observability > summary span {
+  display: block;
+  font-size: 11px;
+  line-height: 1.8;
+  margin-top: 5px;
+  color: #9a7aa7;
+}
+.optional-observability > .living-ecosystem {
+  margin: 0;
+  border-radius: 0 0 10px 10px;
+  border-inline: 0;
+  border-bottom: 0;
+}
+.eco-optional-label {
+  display: block;
+  color: #b9a0ca;
+  font-size: 10px;
+  margin-top: 10px;
+}
+.eco-topology-disclosure {
+  margin: 0;
+  padding: 0 26px 22px;
+  color: #ead9f5;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.9;
+}
+.eco-topology-disclosure > span {
+  display: block;
+  font-size: 10px;
+  color: #b7a0c8;
+  font-weight: 400;
+}
+.eco-classification {
+  display: inline-flex;
+  border: 1px solid #a98aba44;
+  border-radius: 4px;
+  padding: 5px 8px;
+  color: #d8bfeb !important;
+  font-size: 9px !important;
+  margin-top: 12px;
+}
+.living-ecosystem .eco-tools > a {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 10px;
+  color: #dcc5eb;
+  padding: 8px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+@media (max-width: 720px) {
+  .overview-page .page-heading {
+    margin-bottom: 19px;
+  }
+  .optional-observability > summary {
+    padding: 19px;
+  }
+  .optional-observability > summary strong {
+    font-size: 14px;
+  }
+  .optional-observability > summary span {
+    font-size: 11px;
+  }
+  .eco-topology-disclosure {
+    padding-inline: 20px;
+    font-size: 12px;
+  }
+}

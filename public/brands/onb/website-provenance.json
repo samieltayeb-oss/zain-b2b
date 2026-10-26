@@ -1,0 +1,17 @@
+{
+  "officialPage": "https://www.onb-sd.com/en/",
+  "officialStylesheet": "https://www.onb-sd.com/WebSite/css/skins/default.css",
+  "officialAsset": "https://www.onb-sd.com/WebSite/css/skins/images/logo_en.png",
+  "sourceDimensions": [
+    320,
+    80
+  ],
+  "sourceSHA256": "941eb9535cb427428cdfa6226f2612402c5b2f21c194620fae2dbc3e2f2adb35",
+  "preservedOfficial": "onb-logo-en.png",
+  "uiVariant": "onb-sidebar-silver.png",
+  "uiColour": "#c9bfce",
+  "authorisation": "User explicitly authorised a monochrome grey UI presentation variant for the purple sidebar.",
+  "transform": "No crop, resample, trace or redraw. Original pixel coverage retained; white matte removed and dark-UI foreground presented in soft silver. Original name, slogan and symbol retained.",
+  "lightUIVariant": "onb-website-transparent.png",
+  "formalReportUsage": "Use unchanged official onb-logo-en.png on white report surfaces."
+}

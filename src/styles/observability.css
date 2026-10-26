@@ -1,0 +1,168 @@
+/* Software-led visuals extend the existing Zain-grounded design system. */
+.overview-page .hero {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  min-height: 400px;
+}
+.observability-preview {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+  margin: 0;
+  padding: 30px 27px 23px 12px;
+}
+.observability-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow:
+    0 18px 46px #160b2855,
+    0 0 0 1px #e2bee530;
+}
+.observability-preview figcaption {
+  text-align: end;
+  margin-top: 11px;
+  font-size: 9px;
+  color: #d4bddd;
+}
+.sidebar-programme {
+  border-top: 1px solid #ffffff18;
+  padding: 18px 12px 0;
+}
+.sidebar-programme small,
+.sidebar-programme span {
+  display: block;
+  font-size: 9px;
+  color: #bca9c7;
+}
+.sidebar-programme strong {
+  display: block;
+  margin: 7px 0 4px;
+  font-size: 13px;
+  color: #eedff3;
+}
+.observability-story {
+  margin-top: 30px;
+}
+.observability-story > .section-heading {
+  margin-bottom: 18px;
+}
+.observability-story .section-heading p {
+  font-size: 11px;
+}
+.observability-story figure {
+  margin: 0;
+}
+.observability-story img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+.observability-story figcaption {
+  font-size: 10px;
+  color: #7c6688;
+  margin-top: 10px;
+}
+@media (min-width: 1600px) {
+  .overview-page .hero-copy {
+    padding: 36px 0 36px 36px;
+  }
+  .overview-page .hero h2 {
+    font-size: 40px;
+  }
+  .overview-page .hero p {
+    max-width: 420px;
+    font-size: 12px;
+  }
+}
+@media (max-width: 1250px) {
+  .overview-page .hero {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  }
+  .overview-page .hero-copy {
+    padding: 28px 0 28px 25px;
+  }
+  .overview-page .hero h2 {
+    font-size: 30px;
+  }
+  .observability-preview {
+    padding-inline: 14px;
+  }
+}
+@media (max-width: 1000px) {
+  .overview-page .hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .overview-page .hero-copy {
+    padding: 30px 30px 0;
+  }
+  .overview-page .hero h2 {
+    font-size: 35px;
+  }
+  .overview-page .hero p {
+    max-width: 470px;
+    font-size: 12px;
+  }
+  .overview-page .hero-actions > span {
+    display: block;
+  }
+  .observability-preview {
+    padding: 27px 30px 22px;
+  }
+  .observability-preview figcaption {
+    font-size: 10px;
+  }
+  .observability-story > .section-heading {
+    align-items: flex-start;
+  }
+}
+@media (max-width: 720px) {
+  .overview-page .hero {
+    display: block;
+    min-height: 0;
+  }
+  .overview-page .hero-copy {
+    padding: 27px 23px 0;
+  }
+  .overview-page .hero h2 {
+    font-size: 32px;
+  }
+  .overview-page .hero p {
+    font-size: 11px;
+  }
+  .overview-page .hero-actions {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .overview-page .hero-actions > span {
+    font-size: 9px;
+  }
+  .observability-preview {
+    padding: 27px 16px 18px;
+  }
+  .observability-preview figcaption {
+    font-size: 8px;
+    text-align: center;
+  }
+  .observability-story > .section-heading {
+    flex-direction: column;
+    gap: 13px;
+  }
+  .observability-story h2 {
+    font-size: 19px;
+  }
+  .observability-story figure {
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+  .observability-story img {
+    width: 760px;
+    max-width: none;
+  }
+  .observability-story figcaption {
+    max-width: 330px;
+    font-size: 10px;
+  }
+}

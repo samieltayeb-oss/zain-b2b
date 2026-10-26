@@ -1,0 +1,16 @@
+{
+  "source": "https://www.onb-sd.com/en/Compliance/DownloadFileEnglish/8508436e-cc59-4cc2-85c0-c13e134c9dd6",
+  "sourcePage": 1,
+  "sourceTitle": "ONB Annual Report 2023",
+  "sourceSHA256": "417e6fcc596ae10dc5130d7f4747a0f169394a26822ec0a629d3777bda7f15ca",
+  "extractedPaths": 36,
+  "originalFill": "#207533",
+  "bounds": [
+    252.4346,
+    97.18608479648191,
+    516.8652999999999,
+    265.9366618462469
+  ],
+  "modification": "Original paths, colours, Arabic typography, English name and symbol retained unchanged. Unrelated annual-report page artwork excluded. Transparent PNG is a faithful render of the extracted vector.",
+  "currentWebsiteCrosscheck": "Same green ONB symbol and names appear in both English and Arabic official live-site header PNGs. Report variant has stacked bilingual type and no slogan. No claim of a new brand-owner approval."
+}

@@ -1,0 +1,458 @@
+/* Arabic typography and logical layout; approved English composition is unchanged. */
+:root[lang="ar"] {
+  --font: "IBM Plex Sans Arabic", Arial, sans-serif;
+}
+[lang="ar"] body,
+[lang="ar"] .living-ecosystem {
+  font-family: "IBM Plex Sans Arabic", Arial, sans-serif;
+}
+[lang="ar"] :is(button, input, select, textarea, code) {
+  font-family: inherit;
+}
+[lang="ar"]
+  :is(
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    small,
+    strong,
+    span,
+    a,
+    label,
+    dt,
+    dd,
+    summary,
+    button
+  ) {
+  letter-spacing: 0;
+}
+[lang="ar"] :is(h1, h2, h3) {
+  font-weight: 600;
+  line-height: 1.55;
+}
+[lang="ar"] p {
+  line-height: 1.95;
+}
+[lang="ar"] .page-heading h1 {
+  font-size: clamp(25px, 2.4vw, 33px);
+}
+[lang="ar"] .page-heading p {
+  font-size: 14px;
+  max-width: 900px;
+}
+[lang="ar"] .hero-copy h2 {
+  font-size: clamp(27px, 2.8vw, 39px);
+  line-height: 1.55;
+  font-weight: 600;
+  max-width: 510px;
+}
+[lang="ar"] .hero-copy p {
+  font-size: 14px;
+}
+[lang="ar"] .hero-actions .button {
+  font-size: 14px;
+}
+[lang="ar"] .hero-actions > span {
+  font-size: 12px;
+}
+[lang="ar"] .hero-secondary {
+  font-size: 13px;
+}
+[lang="ar"] :is(.hero-kicker, .hero-footnote) {
+  font-size: 12px;
+}
+[lang="ar"] .hero-copy {
+  padding-inline: 34px 0;
+}
+[lang="ar"] .grafana-capture img {
+  direction: ltr;
+}
+[lang="ar"] :is(.grafana-product-preview figcaption, .grafana-context) {
+  font-size: 12px;
+  line-height: 1.8;
+}
+[lang="ar"] .nav-item {
+  font-size: 14px;
+  line-height: 1.65;
+  min-height: 46px;
+}
+[lang="ar"] .sidebar-product {
+  font-size: 16px;
+}
+[lang="ar"] :is(.sidebar-product span, .customer-identity-region span) {
+  font-size: 11px;
+}
+[lang="ar"] .customer-identity-region strong {
+  font-size: 14px;
+}
+[lang="ar"]
+  :is(
+    .nav-label,
+    .side-progress small,
+    .sidebar-trust,
+    .sidebar-programme span
+  ) {
+  font-size: 11px;
+  line-height: 1.85;
+}
+[lang="ar"] .breadcrumb {
+  min-width: 0;
+  font-size: 13px;
+}
+[lang="ar"] :is(.button, .text-link) {
+  font-size: 13px;
+  line-height: 1.65;
+}
+[lang="ar"]
+  :is(.button, .text-link, .nav-item, .form-navigation, .side-progress a)
+  > .lucide-arrow-right,
+[lang="ar"] .form-navigation .lucide-arrow-left {
+  transform: scaleX(-1);
+}
+[lang="ar"]
+  :is(.text-link, .journey-row, .featured-exploration-launch, .hero-secondary)
+  > .lucide-arrow-up-right {
+  transform: scaleX(-1);
+}
+[lang="ar"]
+  .featured-exploration
+  > summary:hover
+  .featured-exploration-launch
+  > svg {
+  transform: scaleX(-1) translate(2px, -2px);
+}
+[lang="ar"]
+  .optional-observability.featured-exploration
+  .featured-exploration-label {
+  font-size: 12px;
+}
+[lang="ar"]
+  .optional-observability.featured-exploration
+  .featured-exploration-copy
+  > strong {
+  font-size: 21px;
+  line-height: 1.6;
+}
+[lang="ar"] .featured-exploration-copy p {
+  font-size: 13px;
+  line-height: 1.9;
+}
+[lang="ar"]
+  .optional-observability.featured-exploration
+  .featured-exploration-launch
+  > span {
+  font-size: 13px;
+}
+[lang="ar"] .intake-heading h1 {
+  font-size: clamp(25px, 2.2vw, 33px);
+  line-height: 1.6;
+  max-width: 100%;
+}
+[lang="ar"] .intake-heading p {
+  font-size: 14px;
+  max-width: 950px;
+}
+[lang="ar"]
+  :is(
+    .intake-meta,
+    .intake-meta small,
+    .intake-progress small,
+    .intake-progress span,
+    .intake-guidance,
+    .intake-recipient,
+    .intake-privacy,
+    .intake-trust
+  ) {
+  font-size: 13px;
+  line-height: 1.9;
+}
+[lang="ar"] .intake-guidance h2 {
+  font-size: 16px;
+}
+[lang="ar"] .intake-guidance p {
+  font-size: 13px;
+}
+[lang="ar"] .intake-service-list span {
+  font-size: 12px;
+}
+[lang="ar"] .step {
+  text-align: start;
+  font-size: 13px;
+  line-height: 1.65;
+}
+[lang="ar"] .step small {
+  font-size: 11px;
+  line-height: 1.7;
+}
+[lang="ar"] .form-header h2 {
+  font-size: 25px;
+}
+[lang="ar"] .form-header p {
+  font-size: 14px;
+  line-height: 1.9;
+}
+[lang="ar"] .field label {
+  font-size: 14px;
+  line-height: 1.8;
+}
+[lang="ar"] .field :is(input, textarea, select) {
+  font-size: 15px;
+  line-height: 1.8;
+  min-width: 0;
+}
+[lang="ar"]
+  :is(
+    .field-hint,
+    .field-error,
+    .draft-options p,
+    .draft-options label,
+    .notice,
+    .consent,
+    .form-kicker,
+    .save-message
+  ) {
+  font-size: 12px;
+  line-height: 1.9;
+}
+[lang="ar"] .field-hint:empty {
+  display: none;
+}
+[lang="ar"] .field input:is([type="email"], [type="date"], [type="number"]) {
+  direction: ltr;
+  text-align: right;
+  unicode-bidi: isolate;
+}
+[lang="ar"] .field textarea {
+  direction: rtl;
+  unicode-bidi: plaintext;
+}
+[lang="ar"] .response-summary :is(summary, dt, dd) {
+  font-size: 13px;
+  line-height: 1.9;
+  text-align: start;
+}
+[lang="ar"] .response-summary dd {
+  unicode-bidi: plaintext;
+}
+[lang="ar"] bdi {
+  unicode-bidi: isolate;
+  direction: ltr;
+  display: inline-block;
+}
+[lang="ar"] .submission-reference :is(strong, small) {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+[lang="ar"] .printable-report :is(th, td) {
+  text-align: start;
+  font-size: 12px;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+[lang="ar"] .living-ecosystem {
+  text-align: start;
+}
+[lang="ar"]
+  .living-ecosystem
+  :is(
+    .eco-brand-label,
+    .eco-optional-label,
+    .eco-demo-tag,
+    .eco-demonstration strong
+  ) {
+  font-size: 11px;
+  letter-spacing: 0;
+}
+[lang="ar"] .living-ecosystem .eco-heading h2 {
+  font-size: clamp(25px, 2.5vw, 35px);
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: 0;
+  max-width: 720px;
+}
+[lang="ar"] .eco-heading p {
+  font-size: 14px;
+  line-height: 1.9;
+  max-width: 660px;
+}
+[lang="ar"] .eco-demonstration {
+  text-align: start;
+  max-width: 240px;
+  flex-shrink: 1;
+}
+[lang="ar"] .eco-demonstration :is(span, small) {
+  font-size: 11px;
+  line-height: 1.85;
+}
+[lang="ar"] .eco-topology-disclosure {
+  font-size: 13px;
+  line-height: 1.9;
+}
+[lang="ar"] .eco-topology-disclosure span {
+  font-size: 12px;
+}
+[lang="ar"] .eco-scenarios {
+  flex-wrap: wrap;
+}
+[lang="ar"] .eco-scenarios button {
+  font-size: 12px;
+  line-height: 1.8;
+  padding: 9px 12px;
+}
+[lang="ar"] .eco-map-meta {
+  font-size: 12px;
+}
+[lang="ar"] .eco-desktop-map {
+  direction: ltr;
+}
+[lang="ar"] .eco-desktop-map svg text {
+  font-family: "IBM Plex Sans Arabic", Arial, sans-serif;
+  letter-spacing: 0;
+  direction: rtl;
+  unicode-bidi: plaintext;
+}
+[lang="ar"] .eco-desktop-map .node-name {
+  font-size: 13px;
+}
+[lang="ar"] .eco-desktop-map .node-metric {
+  font-size: 9px;
+}
+[lang="ar"] .eco-zone-labels text {
+  font-size: 12px;
+  direction: ltr;
+}
+[lang="ar"]
+  :is(
+    .eco-console,
+    .eco-tooltip,
+    .eco-detail,
+    .eco-evidence,
+    .eco-mobile-explorer
+  ) {
+  min-width: 0;
+  text-align: start;
+}
+[lang="ar"] .eco-console {
+  border-left: 0;
+  border-inline-start: 1px solid var(--eco-line);
+}
+[lang="ar"] .eco-console :is(header, dt, small),
+[lang="ar"] .eco-health > span {
+  font-size: 12px;
+  line-height: 1.8;
+}
+[lang="ar"] .eco-health > div small {
+  font-size: 11px;
+}
+[lang="ar"] .eco-resource-bars > div > span {
+  font-size: 12px;
+}
+[lang="ar"] .eco-latency > span {
+  font-size: 11px;
+}
+[lang="ar"] .eco-latency > strong {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+[lang="ar"] .eco-evidence :is(small, p, code, strong) {
+  font-size: 13px;
+  line-height: 1.9;
+}
+[lang="ar"] .eco-evidence code {
+  font-family: inherit;
+  direction: rtl;
+  unicode-bidi: plaintext;
+}
+[lang="ar"] .eco-detail :is(p, dt, dd) {
+  font-size: 13px;
+  line-height: 1.95;
+}
+[lang="ar"] .eco-detail h3 {
+  font-size: 23px;
+}
+[lang="ar"] .eco-tooltip :is(span, small) {
+  font-size: 12px;
+  line-height: 1.8;
+}
+[lang="ar"] .eco-select-hint {
+  margin-left: 0;
+  margin-inline-start: auto;
+}
+[lang="ar"] .eco-footnote {
+  font-size: 12px;
+  line-height: 1.9;
+}
+[lang="ar"] .eco-oracle dd {
+  unicode-bidi: plaintext;
+}
+@media (max-width: 1000px) {
+  [lang="ar"] .eco-workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  [lang="ar"] .eco-console {
+    border-inline-start: 0;
+  }
+  [lang="ar"] .eco-heading {
+    gap: 20px;
+  }
+}
+@media (max-width: 720px) {
+  [lang="ar"] .hero-copy {
+    padding-inline: 24px;
+  }
+  [lang="ar"] .hero-copy h2 {
+    font-size: 29px;
+  }
+  [lang="ar"] :is(.page-heading h1, .intake-heading h1) {
+    font-size: 25px;
+  }
+  [lang="ar"] .eco-heading {
+    flex-direction: column;
+  }
+  [lang="ar"] .eco-demonstration {
+    max-width: none;
+  }
+  [lang="ar"] .eco-demonstration small br {
+    display: none;
+  }
+  [lang="ar"] .eco-scenarios {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+  }
+  [lang="ar"] .eco-scenarios button {
+    text-align: start;
+    font-size: 13px;
+  }
+  [lang="ar"] .eco-toolbar {
+    align-items: stretch;
+  }
+  [lang="ar"] .eco-heading p {
+    font-size: 13px;
+  }
+  [lang="ar"]
+    .optional-observability.featured-exploration
+    .featured-exploration-copy
+    > strong {
+    font-size: 19px;
+    line-height: 1.7;
+  }
+  [lang="ar"] .topbar .breadcrumb > span:first-of-type,
+  [lang="ar"] .topbar .slash {
+    display: none;
+  }
+  [lang="ar"] .breadcrumb strong {
+    font-size: 12px;
+  }
+  [lang="ar"] .demo-indicator {
+    font-size: 10px;
+  }
+  [lang="ar"] .living-ecosystem .eco-heading h2 {
+    font-size: 25px;
+  }
+  [lang="ar"] .eco-evidence-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
