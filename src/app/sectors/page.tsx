@@ -3,6 +3,7 @@ import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { useLocale } from "@/components/locale-provider";
 import { sectorsData, type SectorItem } from "@/content/sectors-data";
+import { sectorProspects } from "@/content/sector-prospects";
 import { Reveal, Badge, EvidenceBadge } from "@/components/ui";
 import { PriorityRankingVisualizer } from "@/features/charts/priority-ranking";
 import {
@@ -16,7 +17,101 @@ import {
   ShieldAlert,
   Quote,
   Compass,
+  Target,
+  MapPin,
+  UserCheck,
+  Send,
 } from "lucide-react";
+
+const sectorHeroVisuals: Record<
+  string,
+  { img: string; captionEn: string; captionAr: string }
+> = {
+  ngos: {
+    img: "/assets/report/connected-aid-vsat.jpg",
+    captionEn:
+      "Connected Aid Infrastructure: Licensed 4G/VSAT compound failover, Bede Corporate bulk cash & offline telemetry",
+    captionAr:
+      "بنية الإغاثة المتصلة: مسار 4G/VSAT مرخص للمقرات، صرف نقدي بالجملة عبر Bede ومزامنة ميدانية",
+  },
+  banking: {
+    img: "/assets/report/banking-database.jpg",
+    captionEn:
+      "Financial Grade Architecture: Dual-Path MPLS/APN, Direct SMPP OTP Gateways & Geo-Redundant Database Sync",
+    captionAr:
+      "بنية المصارف والمدفوعات: مسار MPLS/APN مزدوج، بوابة SMPP لرموز التحقق (OTP) وتكرار قواعد البيانات",
+  },
+  ports: {
+    img: "/assets/report/port-sudan-iot.jpg",
+    captionEn:
+      "Port Sudan Maritime & Corridor Telemetry: Fleet VTS, Customs APN & Cold-Chain Container IoT",
+    captionAr:
+      "القياس اللوجستي في بورتسودان: تتبع الأسطول (VTS)، شبكات APN للتخليص الجمركي وحاويات التبريد",
+  },
+  agriculture: {
+    img: "/assets/report/solar-agro-telemetry.jpg",
+    captionEn:
+      "Agro-Industrial Telemetry: Solar Pump IoT, Grain Silo Sensors & Bede Grower Payouts",
+    captionAr:
+      "القياس الزراعي والصناعي: استشعار مضخات الطاقة الشمسية والصوامع وصرف مستحقات المزارعين عبر Bede",
+  },
+  energy: {
+    img: "/assets/report/solar-agro-telemetry.jpg",
+    captionEn:
+      "Clean Energy & Microgrid Telemetry: M2M SIMs for Solar Inverters, Pay-As-You-Go Metering & Bede Billing",
+    captionAr:
+      "قياس الطاقة الشمسية والشبكات المصغرة: شرائح M2M للعاكسات، والعدادات الذكية والفوترة عبر Bede",
+  },
+  healthcare: {
+    img: "/assets/report/connected-aid-vsat.jpg",
+    captionEn:
+      "Connected Healthcare & Cold-Chain: Vaccine Fridge IoT Alerts, Hospital APN & Tele-Consultation Hotlines",
+    captionAr:
+      "الرعاية الصحية وسلاسل التبريد: تنبيهات ثلاجات اللقاحات، شبكات المستشفيات وخطوط الاستشارة",
+  },
+  education: {
+    img: "/assets/report/cloud-datacenter.jpg",
+    captionEn:
+      "University & Exam Infrastructure: ZainCloud LMS Hosting, Zero-Rated Student Portals & Bede Tuition",
+    captionAr:
+      "بنية الجامعات والامتحانات: استضافة المنصات التعليمية على ZainCloud وبوابات الطلاب بدون رصيد",
+  },
+  mining: {
+    img: "/assets/report/port-sudan-iot.jpg",
+    captionEn:
+      "Red Sea & Northern Concession Connectivity: Licensed VSAT + 4G CUG, Convoy VTS & Bede Payroll",
+    captionAr:
+      "ربط امتيازات التعدين في البحر الأحمر والشمالية: قمر صناعي مرخص و4G وتتبع القوافل ورواتب Bede",
+  },
+  "real-estate": {
+    img: "/assets/report/cover-hero.jpg",
+    captionEn:
+      "Khartoum & East Nile Reconstruction: Rapid 4G Site Office Boxes, Crew SIM Pools & Equipment VTS",
+    captionAr:
+      "إعمار الخرطوم وشرق النيل: صناديق ربط المواقع الهندسية بـ 4G، شرائح الفرق وتتبع المعدات",
+  },
+  retail: {
+    img: "/assets/report/banking-database.jpg",
+    captionEn:
+      "Wholesale & FMCG Distribution: Dual-SIM POS Connectivity, Delivery Fleet VTS & Bede B2B Collection",
+    captionAr:
+      "توزيع السلع والتجارة: شرائح نقاط البيع (POS)، تتبع شاحنات التوزيع والتحصيل الرقمي عبر Bede",
+  },
+  public: {
+    img: "/assets/report/cloud-datacenter.jpg",
+    captionEn:
+      "Sovereign e-Government & Utilities: In-Country ZainCloud Hosting, SMPP Citizen Alerts & Bede Revenue Collection",
+    captionAr:
+      "الحكومة الإلكترونية والمرافق: استضافة سيادية داخل السودان على ZainCloud وتنبيهات الرسائل والتحصيل",
+  },
+  smes: {
+    img: "/assets/report/cover-hero.jpg",
+    captionEn:
+      "Business-in-a-Box for Returning SMEs: 4G CPE Router, Staff Hybrid SIMs, Toll-Free 800 & Bede Merchant",
+    captionAr:
+      "حزمة «شركة في صندوق» للمنشآت العائدة: راوتر 4G، شرائح الموظفين، الرقم الموحد وقبول الدفع عبر Bede",
+  },
+};
 
 function SectorsExplorerContent() {
   const { b, isAr } = useLocale();
@@ -129,6 +224,28 @@ function SectorsExplorerContent() {
             </div>
           </header>
 
+          {/* Sector Architecture & Infrastructure Visual Showcase */}
+          {sectorHeroVisuals[activeSector.id] && (
+            <div className="sector-visual-showcase">
+              <img
+                src={sectorHeroVisuals[activeSector.id].img}
+                alt={b(activeSector.name)}
+              />
+              <div className="sector-visual-overlay">
+                <small>
+                  {isAr
+                    ? "البنية التحتية المقترحة لزين أعمال"
+                    : "ZAIN SUDAN BUSINESS · ARCHITECTURE BLUEPRINT"}
+                </small>
+                <strong>
+                  {isAr
+                    ? sectorHeroVisuals[activeSector.id].captionAr
+                    : sectorHeroVisuals[activeSector.id].captionEn}
+                </strong>
+              </div>
+            </div>
+          )}
+
           {/* Market State */}
           <section className="sector-block">
             <h3>
@@ -236,6 +353,79 @@ function SectorsExplorerContent() {
               </ul>
             </section>
           </div>
+
+          {/* 5 Potential Target Clients & Decision-Maker Outreach Playbook */}
+          {sectorProspects[activeSector.id] && (
+            <section className="prospects-playbook-block">
+              <div className="prospects-playbook-head">
+                <div>
+                  <h3>
+                    <Target size={18} />
+                    {isAr
+                      ? "أهم 5 جهات مستهدفة ودليل الوصول لصناع القرار (DM Outreach Playbook)"
+                      : "Top 5 Potential Target Clients & Decision-Maker (DM) Outreach Playbook"}
+                  </h3>
+                  <p>
+                    {isAr
+                      ? "قائمة عملية لفريق مبيعات وحلول الأعمال (B2B Presales) للبحث عن صناع القرار والتواصل معهم مباشرة مع تحديد نقطة الألم وعرض الدخول المقترح لكل جهة."
+                      : "Actionable account target list for the B2B Presales & Cloud/Hosting team to identify Decision-Makers, understand their operational pain points, and lead with a tailored pitch."}
+                  </p>
+                </div>
+                <Badge tone="purple">
+                  {isAr ? "5 عملاء محتملين للقطاع" : "5 Target Prospects"}
+                </Badge>
+              </div>
+
+              <div className="prospects-cards-grid">
+                {sectorProspects[activeSector.id].map((prospect, idx) => (
+                  <div className="prospect-card" key={idx}>
+                    <div className="prospect-card-top">
+                      <div className="prospect-name-wrap">
+                        <span className="prospect-num">{idx + 1}</span>
+                        <strong>{b(prospect.name)}</strong>
+                      </div>
+                      <span className="prospect-hub-pill">
+                        <MapPin size={12} />
+                        {b(prospect.hub)}
+                      </span>
+                    </div>
+
+                    <div className="prospect-details-grid">
+                      <div className="prospect-detail-col is-dm">
+                        <small>
+                          <UserCheck size={12} />
+                          {isAr
+                            ? "صانع القرار المستهدف (DM Title)"
+                            : "Target Decision-Maker (DM) to Search"}
+                        </small>
+                        <p>{b(prospect.dmTitle)}</p>
+                      </div>
+
+                      <div className="prospect-detail-col">
+                        <small>
+                          <AlertTriangle size={12} />
+                          {isAr
+                            ? "لماذا هذه الجهة / نقطة الألم المتوقعة"
+                            : "Why Target / Expected Pain Point"}
+                        </small>
+                        <p>{b(prospect.painPoint)}</p>
+                      </div>
+
+                      <div className="prospect-detail-col is-pitch">
+                        <small>
+                          <Send size={12} />
+                          {isAr
+                            ? "زاوية التواصل والعرض المقترح"
+                            : "Recommended Presales Outreach Pitch"}
+                        </small>
+                        <p>{b(prospect.outreachPitch)}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* Footer Navigation between sectors */}
           <footer className="sector-playbook-nav">
